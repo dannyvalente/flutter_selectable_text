@@ -1,3 +1,5 @@
+library flutter_selectable_text;
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
