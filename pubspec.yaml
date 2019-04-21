@@ -1,12 +1,12 @@
 name: flutter_selectable_text
 description: A Selectable Text widget for Flutter.
-version: 0.0.2
+version: 0.1.0
 author: Danny Valente <valente.danny@gmail.com>
 homepage: https://github.com/dannyvalente/flutter_selectable_text
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
-  flutter: ">=1.2.1 <2.0.0"
+  flutter: "1.2.1"
 
 dependencies:
   flutter:
