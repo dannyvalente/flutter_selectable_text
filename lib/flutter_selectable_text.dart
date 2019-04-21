@@ -99,7 +99,7 @@ class _SelectableTextState extends State<SelectableText> {
     }
   }
 
-  void _handleSingleLongTapStart(GestureLongPressDragStartDetails details) {
+  void _handleSingleLongTapStart(LongPressStartDetails details) {
     // the EditableText widget will force the keyboard to come up if our focus node
     // is already focused. It does this by using a TextInputConnection
     // In order to tool it not to do that, we override our focus while selecting text
@@ -123,7 +123,7 @@ class _SelectableTextState extends State<SelectableText> {
     _effectiveFocusNode._overrideFocus = null;
   }
 
-  void _handleSingleLongTapDragUpdate(GestureLongPressDragUpdateDetails details) {
+  void _handleSingleLongTapMoveUpdate(LongPressMoveUpdateDetails details) {
     // the EditableText widget will force the keyboard to come up if our focus node
     // is already focused. It does this by using a TextInputConnection
     // In order to tool it not to do that, we override our focus while selecting text
@@ -139,7 +139,7 @@ class _SelectableTextState extends State<SelectableText> {
     _effectiveFocusNode._overrideFocus = null;
   }
 
-  void _handleSingleLongTapUp(GestureLongPressDragUpDetails details) {
+  void _handleSingleLongTapEnd(LongPressEndDetails details) {
     _editableTextKey.currentState.showToolbar();
   }
 
@@ -236,8 +236,8 @@ class _SelectableTextState extends State<SelectableText> {
         onTapDown: _handleTapDown,
         onSingleTapUp: _handleSingleTapUp,
         onSingleLongTapStart: _handleSingleLongTapStart,
-        onSingleLongTapDragUpdate: _handleSingleLongTapDragUpdate,
-        onSingleLongTapUp: _handleSingleLongTapUp,
+        onSingleLongTapMoveUpdate: _handleSingleLongTapMoveUpdate,
+        onSingleLongTapEnd: _handleSingleLongTapEnd,
         onDoubleTapDown: _handleDoubleTapDown,
         behavior: HitTestBehavior.translucent,
         child: child,
