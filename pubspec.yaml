@@ -1,6 +1,11 @@
 name: flutter_selectable_text
-description: A Selectable Text widget for Flutter.
-version: 0.2.0
+description:
+  A widget that allows to display text like the Text widget, while also allowing actions like selecting and copying text.
+
+  Because this widget uses the EditableText widget, it does not support RichText nor text spans.
+
+  This will work with different text styles and line heights.
+version: 0.2.1
 author: Danny Valente <valente.danny@gmail.com>
 homepage: https://github.com/dannyvalente/flutter_selectable_text
 
