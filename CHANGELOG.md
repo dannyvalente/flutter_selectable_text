@@ -1,3 +1,6 @@
+## 0.2.1
+* Updated the description in pubspec.yaml
+
 ## 0.2.0
 * Added support for Flutter >=1.4.7
 * Updated flutter version dependency to >=1.4.7 <2.0.0.
