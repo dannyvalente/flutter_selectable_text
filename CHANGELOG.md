@@ -1,3 +1,6 @@
+## 0.2.2
+* Updated the description in pubspec.yaml
+
 ## 0.2.1
 * Updated the description in pubspec.yaml
 
