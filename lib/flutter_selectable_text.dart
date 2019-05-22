@@ -459,8 +459,18 @@ class _TextSelectionControls extends TextSelectionControls {
 
   /// Builder for iOS-style copy/paste text selection toolbar.
   @override
-  Widget buildToolbar(BuildContext context, Rect globalEditableRegion, Offset position, TextSelectionDelegate delegate) {
-    return _platformTextSelectionControls.buildToolbar(context, globalEditableRegion, position, _TextSelectionDelegateHelper(delegate));
+  Widget buildToolbar(
+      BuildContext context,
+      Rect globalEditableRegion,
+      Offset position,
+      List<TextSelectionPoint> endpoints,
+      TextSelectionDelegate delegate) {
+    return _platformTextSelectionControls.buildToolbar(
+        context,
+        globalEditableRegion,
+        position,
+        endpoints,
+        _TextSelectionDelegateHelper(delegate));
   }
 
   /// Builder for iOS text selection edges.
