@@ -1,12 +1,12 @@
 name: flutter_selectable_text
 description: A widget that allows to display text like the Text widget, while also allowing actions like selecting and copying text.
-version: 0.2.3
+version: 0.2.4
 author: Danny Valente <valente.danny@gmail.com>
 homepage: https://github.com/dannyvalente/flutter_selectable_text
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
-  flutter: ">=1.6.0 <2.0.0"
+  flutter: ">=1.7.0 <2.0.0"
 
 dependencies:
   flutter:

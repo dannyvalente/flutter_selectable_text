@@ -454,9 +454,6 @@ class _TextSelectionControls extends TextSelectionControls {
 
   final TextSelectionControls _platformTextSelectionControls;
 
-  @override
-  Size get handleSize => _platformTextSelectionControls.handleSize;
-
   /// Builder for iOS-style copy/paste text selection toolbar.
   @override
   Widget buildToolbar(
@@ -477,5 +474,15 @@ class _TextSelectionControls extends TextSelectionControls {
   @override
   Widget buildHandle(BuildContext context, TextSelectionHandleType type, double textLineHeight) {
     return _platformTextSelectionControls.buildHandle(context, type, textLineHeight);
+  }
+
+  @override
+  Offset getHandleAnchor(TextSelectionHandleType type, double textLineHeight) {
+    return _platformTextSelectionControls.getHandleAnchor(type, textLineHeight);
+  }
+
+  @override
+  Size getHandleSize(double textLineHeight) {
+    return _platformTextSelectionControls.getHandleSize(textLineHeight);
   }
 }

@@ -1,3 +1,7 @@
+## 0.2.4
+* Added support for Flutter >=1.7.0
+* Updated flutter version dependency to >=1.7.0 <2.0.0.
+
 ## 0.2.3
 * Added support for Flutter >=1.6.0
 * Updated flutter version dependency to >=1.6.0 <2.0.0.
