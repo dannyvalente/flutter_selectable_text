@@ -432,9 +432,8 @@ class _TextSelectionDelegateHelper extends TextSelectionDelegate {
   }
 
   set textEditingValue(TextEditingValue value) {
-    // seeing we don't allow to paste or cut, this should never get called
-    assert(false, "A flutter_selectable_text widget does not allow to have text pasted or cut.");
-    delegate.textEditingValue = value;
+    // seeing we don't allow to paste or cut, let's make sure the text doesn't get changed
+    delegate.textEditingValue = value.copyWith(text: delegate.textEditingValue.text);
   }
 
   void hideToolbar() {
