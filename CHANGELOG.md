@@ -1,3 +1,8 @@
+## 0.3.0
+* Added the ability to remove the Cut and Paste options in the overlay toolbar
+* Added support for Flutter >=1.7.8
+* Updated flutter version dependency to >=1.7.8 <2.0.0.
+
 ## 0.2.4
 * Added support for Flutter >=1.7.0
 * Updated flutter version dependency to >=1.7.0 <2.0.0.

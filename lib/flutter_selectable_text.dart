@@ -415,25 +415,26 @@ class _TextSelectionDelegateHelper extends TextSelectionDelegate {
 
   final TextSelectionDelegate delegate;
 
-  int _overridenCollapsed = 0;
+  // we don't allow to cut
+  bool get cutEnabled => false;
+
+  // we allow to copy
+  bool get copyEnabled => true;
+
+  // we don't allow to paste
+  bool get pasteEnabled => false;
+
+  // well allow to select all
+  bool get selectAllEnabled => true;
 
   TextEditingValue get textEditingValue {
-    // as soon as this helper class is instantiated, canCut(), canCopy(), and canPaste()
-    // will get called. Both canCut() and canCopy() will call this delegate getter
-    // so we can return a collapsed value on the first call
-    // Unfortunately, the canPaste() call returns true and there's no way to do anything
-    // to prevent that, short of copying all the code from cupertino/text_selection.dart
-    if (_overridenCollapsed < 1) {
-      _overridenCollapsed++;
-      return delegate.textEditingValue.copyWith(selection: TextSelection.collapsed(offset: 0));
-    }
     return delegate.textEditingValue;
   }
 
   set textEditingValue(TextEditingValue value) {
-    // because we can't disable the Paste toolbar option, let's make sure we don't
-    // allow to actually paste data by always keeping the same text we had before
-    delegate.textEditingValue = value.copyWith(text: delegate.textEditingValue.text);
+    // seeing we don't allow to paste or cut, this should never get called
+    assert(false, "A flutter_selectable_text widget does not allow to have text pasted or cut.");
+    delegate.textEditingValue = value;
   }
 
   void hideToolbar() {
@@ -459,15 +460,19 @@ class _TextSelectionControls extends TextSelectionControls {
   Widget buildToolbar(
       BuildContext context,
       Rect globalEditableRegion,
+      double textLineHeight,
       Offset position,
       List<TextSelectionPoint> endpoints,
-      TextSelectionDelegate delegate) {
+      TextSelectionDelegate delegate,
+      ) {
     return _platformTextSelectionControls.buildToolbar(
-        context,
-        globalEditableRegion,
-        position,
-        endpoints,
-        _TextSelectionDelegateHelper(delegate));
+      context,
+      globalEditableRegion,
+      textLineHeight,
+      position,
+      endpoints,
+        _TextSelectionDelegateHelper(delegate)
+    );
   }
 
   /// Builder for iOS text selection edges.
