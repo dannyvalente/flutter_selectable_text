@@ -1,3 +1,6 @@
+## 0.3.1
+* Fixed an assertion that was happening
+
 ## 0.3.0
 * Added the ability to remove the Cut and Paste options in the overlay toolbar
 * Added support for Flutter >=1.7.8
